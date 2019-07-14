@@ -58,12 +58,7 @@ namespace Backend
             }
             
             app.UseDefaultFiles();
-            app.UseStaticFiles(new StaticFileOptions()
-            {
-                FileProvider = new PhysicalFileProvider(
-                    Path.Combine(Directory.GetCurrentDirectory(), @"/a/Frontend/")),
-                RequestPath = new PathString("/a/Frontend")
-            });
+            app.UseStaticFiles();
 
             app.UseHttpsRedirection();
             app.UseMvc();
