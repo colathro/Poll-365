@@ -54,6 +54,14 @@ namespace Backend
                 var context = serviceScope.ServiceProvider.GetRequiredService<PollContext>();
                 context.Database.EnsureCreated();
             }
+            
+            app.UseDefaultFiles();
+            app.UseStaticFiles(new StaticFileOptions()
+            {
+                FileProvider = new PhysicalFileProvider(
+                    Path.Combine(Directory.GetCurrentDirectory(), @"/a/Frontend/")),
+                RequestPath = new PathString("/a/Frontend")
+            });
 
             app.UseHttpsRedirection();
             app.UseMvc();
