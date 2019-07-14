@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Backend.DataAccess;
 using Backend.Models;
 
@@ -23,7 +24,7 @@ namespace Backend.Controllers
         [HttpGet]
         public ActionResult<List<Answer>> Get()
         {
-            return _context.Answers.ToList();
+            return _context.Answers.Include(Answer => Answer.Question).ToList();
         }
 
         // GET api/values/5

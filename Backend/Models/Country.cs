@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Backend.Models
 {
-    public class Country
+    public class Country : Base
     {
         [Key]
         public int Id { get; set; }

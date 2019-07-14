@@ -4,10 +4,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Backend.Models
 {
-    public class Submission : Base
+    public class Base
     {
-        public int Id { get; set; }
-
-        public Office Office { get; set; }
+        public DateTime CreatedOn { get; set; }
     }
 }

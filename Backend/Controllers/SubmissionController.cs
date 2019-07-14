@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using Backend.DataAccess;
 using Backend.Models;
@@ -21,23 +22,23 @@ namespace Backend.Controllers
 
         // GET api/values
         [HttpGet]
-        public ActionResult<List<Answer>> Get()
+        public ActionResult<List<Submission>> Get()
         {
-            return _context.Answers.ToList();
+            return _context.Submissions.Include(submission => submission.Office).ToList();
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public ActionResult<Answer> Get(int id)
+        public ActionResult<Submission> Get(int id)
         {
-            return _context.Answers
+            return _context.Submissions
                             .Single(b => b.Id == id);
         }
 
         [HttpPost]
-        public void Post([FromBody] Answer answer)
+        public void Post([FromBody] Submission submission)
         {
-            _context.Answers.Add(answer);
+            _context.Submissions.Add(submission);
             _context.SaveChanges();
         }
     }
