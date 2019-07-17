@@ -6,6 +6,7 @@ import {Promise} from 'es6-promise'
 import {messageStore} from './MessageStore'
 import {getErrorMsg} from '../models/ErrorCodes'
 import {applicationStore} from './ApplicationStore';
+import * as Config from '../config/Constants'
 
 
 export interface CommParams {
@@ -18,7 +19,8 @@ export interface CommParams {
 export class CommunicationStoreClass {
     
     private isBusy = false;        
-    private baseUrl = 'https://localhost:5001/api/'
+    //private baseUrl = 'https://localhost:5001/api/'
+    private baseUrl = `${Config.SERVER_URL}${Config.API_URL}`
     
     get = function(params: CommParams): Promise<Response> {        
         

@@ -1,2 +1,2 @@
 export var SERVER_URL = '../';
-export var API_URL = 'enduser/service/'
+export var API_URL = 'api/'
