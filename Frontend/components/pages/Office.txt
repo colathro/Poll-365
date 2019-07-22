@@ -1,0 +1,70 @@
+import React = require('react');
+
+import {Page} from './Page'
+import {OfficeModel} from '../../stores/QuickFinderStore'
+import {Comm} from '../../stores/CommunicationStore'
+import {messageStore} from '../../stores/MessageStore'
+
+export interface OfficeListState {
+    office: OfficeModel[]
+}
+
+export class Office extends React.Component<{}, OfficeListState> {
+    constructor() {
+        super();
+        this.state = { 
+            office: [
+        ]}
+    }
+
+    getOfficeList(){
+	    Comm.get({url: 'office/1', reqMethod: 'get'})
+	    .then(res => {
+	        if (res.ok) {
+	            res.json().then(j => {
+	                this.state.office = j;
+	                this.setState(this.state);
+	            });
+	        }
+	    })   
+	    .catch(err => messageStore.onShowError('Sorry we couldn\'t get the office list. Something went wrong.'));
+	    $('[data-toggle="popover"]').popover({trigger: 'click', html: true});    
+    }
+    
+    componentDidMount() {
+    	this.getOfficeList();
+    	// <i className="fa fa-car fa-3x grey-text"></i><br />
+    }
+	
+    render() {
+        var items = this.state.office as Array<OfficeModel>
+        var summary = <span className="lightgrey-text small-text"><i className="fa fa-frown-o"></i>Found noting</span>
+        return (
+            <Page title="Office">
+	                <div className="list-group">
+	                	{this.state.cars.map(i =>                
+
+	                        <div className="row">
+	                            <div className="col-md-2 col-sm-2 text-center">
+	                            	<i className="fa fa-3x grey-text"></i><br />
+									<h5> Office Id </h5>
+	                                <h5><strong>{i.id}</strong> </h5>
+	                            </div>
+	                            <div className="col-md-2 col-sm-2 text-center">
+	                            	<i className="fa fa-3x grey-text"></i><br />
+									<h5> Name </h5>
+	                                <h5><strong>{i.name}</strong> </h5>
+	                            </div>
+
+	                            <div className="col-md-2 col-sm-2 text-center">
+	                            	<i className="fa fa-3x grey-text"></i><br />
+									<h5> Created on  </h5>
+	                                <h5><strong>{i.createdOn}</strong> </h5>
+	                            </div>
+	                        </div>		                                    
+	                	)}
+	                </div>
+            </Page>
+        );
+    }
+}

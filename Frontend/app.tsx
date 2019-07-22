@@ -9,7 +9,7 @@ import { Welcome } from './components/pages/Welcome';
 
 
 export class App extends React.Component<{}, {}>{
-    
+
     render() {
         return (
             <Router history={hashHistory}>
