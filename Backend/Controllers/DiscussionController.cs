@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Backend.DataAccess;
 using Backend.Models;
+using Microsoft.EntityFrameworkCore;
+using System.Data.SqlClient;
+using System.Linq;
 
 namespace Backend.Controllers
 {
@@ -19,19 +22,23 @@ namespace Backend.Controllers
             _context = context;
         }    
 
-        // GET api/values
-        [HttpGet]
-        public ActionResult<List<Discussion>> Get()
-        {
-            return _context.Discussions.ToList();
-        }
-
         // GET api/values/5
         [HttpGet("{id}")]
         public ActionResult<Discussion> Get(int id)
         {
             return _context.Discussions
                             .Single(b => b.Id == id);
+        }
+
+        [HttpGet]
+        public ActionResult<List<Discussion>> GetTop([FromQuery] UrlQuery urlQuery)
+        {
+            string sql = @"SELECT * FROM Discussion";
+            if (urlQuery.PageNumber.HasValue)
+            {
+                sql += $" ORDER BY Discussion.CreatedOn DESC OFFSET {urlQuery.PageSize} * ({urlQuery.PageNumber}  - 1) ROWS FETCH NEXT {urlQuery.PageSize} ROWS ONLY";
+            }
+            return _context.Discussions.FromSql(sql).ToList();
         }
 
         [HttpPost]
