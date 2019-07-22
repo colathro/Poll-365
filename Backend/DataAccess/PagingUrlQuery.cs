@@ -1,5 +1,5 @@
 namespace Backend.DataAccess{
-    public class UrlQuery
+    public class PagingUrlQuery
     {
         private const int maxPageSize = 100;
         public int? PageNumber { get; set; }

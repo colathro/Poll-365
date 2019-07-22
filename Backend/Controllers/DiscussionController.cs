@@ -31,7 +31,7 @@ namespace Backend.Controllers
         }
 
         [HttpGet]
-        public ActionResult<List<Discussion>> GetTop([FromQuery] UrlQuery urlQuery)
+        public ActionResult<List<Discussion>> GetTop([FromQuery] PagingUrlQuery urlQuery)
         {
             string sql = @"SELECT * FROM Discussion";
             if (urlQuery.PageNumber.HasValue)

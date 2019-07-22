@@ -6,7 +6,15 @@
 
 #### GET
 
+Discussion Paging: Sorted by CreatedOn Descending
+https://localhost:5001/api/discussion?PageNumber=1&PageSize=8
+
+Discussion by Id:
+https://localhost:5001/api/discussion/5
+
 #### POST
+
+Posting Discussion can only be done in the context of a Survey submission.
 
 ## Reply
 
