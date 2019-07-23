@@ -28,17 +28,34 @@ namespace Backend.Controllers
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public ActionResult<Reply> Get(int id)
+        public ActionResult<List<Reply>> Get(int id)
         {
             return _context.Replies
-                            .Single(b => b.Id == id);
+                            .Where(r => r.DiscussionId == id).OrderBy(r => r.ReplyOrder).ToList();
         }
 
         [HttpPost]
-        public void Post([FromBody] Reply Reply)
+        public void Post([FromBody] Reply reply)
         {
-            _context.Replies.Add(Reply);
+            reply.CreatedOn = DateTime.UtcNow;
+            reply.ReplyOrder = GetLatestReplyNumber(reply.DiscussionId);
+
+            _context.Replies.Add(reply);
             _context.SaveChanges();
+        }
+
+        private int GetLatestReplyNumber(int discussionId)
+        {
+            try 
+            {
+                var result = _context.Replies.Where(d => d.DiscussionId == discussionId).OrderByDescending(d => d.ReplyOrder).First();
+                int ret = result.ReplyOrder;
+                return ret += 1;
+            }
+            catch (InvalidOperationException e)
+            {
+                return 0;
+            }
         }
     }
 }

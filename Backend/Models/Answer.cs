@@ -10,8 +10,8 @@ namespace Backend.Models
 
         public int Value { get; set; }
 
-        public Submission Submission { get; set; }
+        public int SubmissionId { get; set; }
 
-        public Question Question { get; set; }
+        public int QuestionId { get; set; }
     }
 }
