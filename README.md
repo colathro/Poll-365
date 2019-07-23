@@ -28,6 +28,21 @@ Posting Discussion can only be done in the context of a Survey submission.
 
 #### POST
 
+Posting a Submission:
+https://localhost:5001/api/submission/
+
+In a single json object, 3 entities are defined: Submission with an OfficeId, Discussion with the text, and a list of answers with Value and questionid.
+
+Sample Json Body:
+{
+	"Answers": [ {"Value" : 5, "QuestionId" : 1},
+		{"Value" : 3, "QuestionId" : 2}
+		],ß
+	"Discussion": {"Text": "Test Test Test Test"},
+	"Submission": {"OfficeId": 1}
+}
+
+
 ## Office
 
 #### GET
@@ -66,6 +81,8 @@ No posting allowed - This is done via direct SQL in data seed scripts.
 
 #### POST
 
+No posting allowed - This is done via direct SQL in data seed scripts.
+
 ## Reply
 
 #### GET
@@ -77,5 +94,7 @@ No posting allowed - This is done via direct SQL in data seed scripts.
 #### GET
 
 #### POST
+
+No posting directly allowed - This is done via direct SQL in data seed scripts.
 
 
