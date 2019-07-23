@@ -17,10 +17,14 @@ export class Poll extends React.Component<{}, {}> {
     }
     
     componentDidMount() {
+        let questions = $("#questions");
         Comm.get({url: 'question', reqMethod: 'get'})
            .then(res => {
                 if (res.ok) {
-                    res.json().then(j => {
+                    res.json().then(entry => {
+                        for (var i = 0; i < entry.length; i++){
+                            questions.append($('<div id ="question"></div>').attr('value', entry[i].id).text(entry[i].text));
+                        }
                     });
                 }
             });
@@ -37,11 +41,9 @@ export class Poll extends React.Component<{}, {}> {
     render() {
        return (          
             <form>
-                   <label for="question1" class="control-label col-sm-4">Question 1</label>
-                    <input type="text" name="question1" /><br />
+                    <div id = "questions">
 
-                    <label for="question1" class="control-label col-sm-4">Question 2</label>
-                    <input type="text" name="question1" />
+                    </div>
 
                     <div>
                         <input type="submit" value="Submit" onClick={this.onSubmit.bind(this)} />

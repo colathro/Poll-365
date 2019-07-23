@@ -21,7 +21,7 @@ export class Page extends React.Component<{}, {}> {
         let officeDropdown = $('#office');
         var s = e.target.value
         console.log(s);
-        Comm.get({url: `office/${s}`, reqMethod: 'get'})
+        Comm.get({url: `office/country/${s}`, reqMethod: 'get'})
            .then(res => {
             if (res.ok) {  
                     res.json().then(entry => {
@@ -63,7 +63,6 @@ export class Page extends React.Component<{}, {}> {
                     <div>
                         <select id="country" name ="country_name" onChange={this.onSelectCountry.bind(this)}>
                               <option>Choose Country</option>
-                              <option value = "2">america</option>
                         </select>
                     </div>
 
