@@ -34,7 +34,7 @@ namespace Backend
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<PollContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("SQLAZURECONNSTR_db")));
+                options.UseSqlServer(Environment.GetEnvironmentVariable("SQLAZURECONNSTR_db")));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
