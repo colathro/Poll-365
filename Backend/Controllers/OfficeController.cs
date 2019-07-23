@@ -34,5 +34,12 @@ namespace Backend.Controllers
             return _context.Offices
                             .Single(b => b.Id == id);
         }
+
+        [HttpGet("country/{id}")]
+        public ActionResult<List<Office>> GetByCountry(int id)
+        {
+            string sql = $"SELECT * FROM Office WHERE Office.CountryId = {id}";
+            return _context.Offices.FromSql(sql).Include(b => b.Country).OrderBy(b => b.Name).ToList();
+        }
     }
 }

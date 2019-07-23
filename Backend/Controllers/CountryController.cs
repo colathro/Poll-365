@@ -24,7 +24,7 @@ namespace Backend.Controllers
         [HttpGet]
         public ActionResult<List<Country>> Get()
         {
-            return _context.Countries.ToList();
+            return _context.Countries.OrderBy(b => b.Name).ToList();
         }
 
         // GET api/values/5
@@ -34,5 +34,7 @@ namespace Backend.Controllers
             return _context.Countries
                             .Single(b => b.Id == id);
         }
+
+        // TODO Sorted Search
     }
 }
