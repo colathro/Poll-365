@@ -13,6 +13,6 @@ namespace Backend.Models
 
         public int ReplyOrder { get; set; }
 
-        public Discussion Discussion { get; set; }
+        public int DiscussionId { get; set; }
     }
 }

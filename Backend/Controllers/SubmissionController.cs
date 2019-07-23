@@ -40,10 +40,14 @@ namespace Backend.Controllers
         {
             try
             {
+                //Submission insertion
+
                 submission.Submission.CreatedOn = DateTime.UtcNow;
                 _context.Submissions.Add(submission.Submission);
                 _context.SaveChanges();
 
+
+                // Answer insertion
                 ParseAnswerList(submission.Answers);
 
                 foreach (var item in submission.Answers)
@@ -54,6 +58,7 @@ namespace Backend.Controllers
                 }
                 _context.SaveChanges();
 
+                // Discussion insertion
                 submission.Discussion.SubmissionId = submission.Submission.Id;
                 submission.Discussion.CreatedOn = DateTime.UtcNow;
                 _context.Discussions.Add(submission.Discussion);

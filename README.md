@@ -87,7 +87,23 @@ No posting allowed - This is done via direct SQL in data seed scripts.
 
 #### GET
 
+Get Replies for a given discussion:
+
+https://localhost:5001/api/reply/2
+
+Example above returns replies for discussion of id == 2.
+
 #### POST
+
+Post a Reply to a discussion:
+https://localhost:5001/api/reply/
+
+Sample body:
+
+{
+	"Text" : "Test Test Tes",
+	"DiscussionId": 2
+}
 
 ## Answer
 
