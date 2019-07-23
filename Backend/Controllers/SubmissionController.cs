@@ -24,7 +24,7 @@ namespace Backend.Controllers
         [HttpGet]
         public ActionResult<List<Submission>> Get()
         {
-            return _context.Submissions.Include(submission => submission.Office).ToList();
+            return _context.Submissions.ToList();
         }
 
         // GET api/values/5
@@ -36,10 +36,46 @@ namespace Backend.Controllers
         }
 
         [HttpPost]
-        public void Post([FromBody] Submission submission)
+        public IActionResult Post([FromBody] SubmissionBody submission)
         {
-            _context.Submissions.Add(submission);
-            _context.SaveChanges();
+            try
+            {
+                submission.Submission.CreatedOn = DateTime.UtcNow;
+                _context.Submissions.Add(submission.Submission);
+                _context.SaveChanges();
+
+                ParseAnswerList(submission.Answers);
+
+                foreach (var item in submission.Answers)
+                {
+                    item.CreatedOn = DateTime.UtcNow;
+                    item.SubmissionId = submission.Submission.Id;
+                    _context.Answers.Add(item);
+                }
+                _context.SaveChanges();
+
+                submission.Discussion.SubmissionId = submission.Submission.Id;
+                submission.Discussion.CreatedOn = DateTime.UtcNow;
+                _context.Discussions.Add(submission.Discussion);
+
+                _context.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                return StatusCode(500);
+            }
+            return StatusCode(201);
+        }
+
+        static private void ParseAnswerList(List<Answer> answers)
+        {
+            foreach (var answer in answers)
+            {
+                if (answer.Value < 1 || answer.Value > 10)
+                {
+                    throw new System.ArgumentException("Submitted Value for Answer Out of Range", "original");
+                }
+            }
         }
     }
 }

@@ -11,6 +11,6 @@ namespace Backend.Models
         [MaxLength(50000)]
         public string Text { get; set; }
 
-        public Submission Submission { get; set; }
+        public int SubmissionId { get; set; }
     }
 }

@@ -8,6 +8,6 @@ namespace Backend.Models
     {
         public int Id { get; set; }
 
-        public Office Office { get; set; }
+        public int OfficeId { get; set; }
     }
 }

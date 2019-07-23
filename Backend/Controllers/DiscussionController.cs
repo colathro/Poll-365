@@ -44,8 +44,6 @@ namespace Backend.Controllers
         [HttpPost]
         public void Post([FromBody] Discussion Discussion)
         {
-            _context.Discussions.Add(Discussion);
-            _context.SaveChanges();
         }
     }
 }

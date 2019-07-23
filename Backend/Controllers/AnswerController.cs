@@ -24,7 +24,7 @@ namespace Backend.Controllers
         [HttpGet]
         public ActionResult<List<Answer>> Get()
         {
-            return _context.Answers.Include(Answer => Answer.Question).ToList();
+            return _context.Answers.ToList();
         }
 
         // GET api/values/5
@@ -38,8 +38,6 @@ namespace Backend.Controllers
         [HttpPost]
         public void Post([FromBody] Answer answer)
         {
-            _context.Answers.Add(answer);
-            _context.SaveChanges();
         }
     }
 }
