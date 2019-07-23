@@ -1,4 +1,4 @@
-   
+
 import NanoFlux = require('../bundle/nanoflux')
 
 import {dispatcher} from '../stores/Dispatcher'
@@ -69,7 +69,7 @@ export class QuickFinderStoreClass {
             });
     }
 
-    getCountrysList= function() {
+/*    getCountrysList= function() {
         Comm.get({url: 'country/1', reqMethod: 'get'})
            .then(res => {
                 if (res.ok) {
@@ -79,6 +79,10 @@ export class QuickFinderStoreClass {
                     });
                 }
             });
+    }
+*/
+    getCountriesList = function(): Promise<Response> {
+        return Comm.get({url: 'office/1', reqMethod: 'get'});
     }
 
     createNewGroup = function(group: OfficeModel) {
