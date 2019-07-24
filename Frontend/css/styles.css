@@ -233,3 +233,13 @@ span .error{
 #nav-right {
     margin-top: 15px;
 }
+
+.footer-name {
+    display: inline;
+    margin-left: 30px;
+}
+
+.footer-hackathon {
+    display: inline;
+    margin-left: 15px;
+}

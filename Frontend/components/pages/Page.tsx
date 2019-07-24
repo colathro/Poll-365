@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import {quickFinderStore, OfficeModel, EventData, EventType} from '../../stores/QuickFinderStore'
 import {NavBar} from '../common/NavBar';
+import {Footer} from '../common/Footer';
 import {Poll} from './Poll';
 import {Comm} from '../../stores/CommunicationStore'
 
@@ -54,23 +55,15 @@ export class Page extends React.Component<{}, {}> {
        return (
             <div>
                 <div>
-                    <NavBar>
-                    <div>
-                        <select id="country" name ="country_name" onChange={this.onSelectCountry.bind(this)}>
-                              <option>Choose Country</option>
-                        </select>
-                    </div>
-
-                    <div>
-                        <select id="office" name ="office_name">
-                        </select>
-                    </div>
-                    </NavBar>
+                    <NavBar/>
                 </div>             
                 <div>
                     <div>
                         <Poll />
                     </div> 
+                </div>
+                <div>
+                    <Footer/>
                 </div>
             </div >
         );
