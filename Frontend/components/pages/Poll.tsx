@@ -4,6 +4,8 @@ import {Answer} from '../common/Answer';
 import {Link} from 'react-router'
 import {quickFinderStore, OfficeModel, EventData, EventType} from '../../stores/QuickFinderStore'
 import {Comm} from '../../stores/CommunicationStore'
+import {messageStore} from '../../stores/MessageStore'
+import {Noty} from 'noty'
 
 
 export class Poll extends React.Component<{}, {}> {   
@@ -23,9 +25,8 @@ export class Poll extends React.Component<{}, {}> {
                             questions.append($('<div id ="question" ></div>').attr('value', entry[i].id).text(entry[i].text));
                             questions.append($('<input class ="answer" type="range" name = "answerinput" oninput="answeroutput.value = answerinput.value" min="0" max="10" step="1.00" style="padding: 5px 50px 0 50px; width: 50%; float:left" ></input>')
                             .attr('questionid', entry[i].id));
-                            questions.append($('<output name="answeroutput" style="padding-left:20px">5</output>'));
-
-                            questions.append($('</br>'));
+                            questions.append($('<br />'));
+                            questions.append($('<br />'));
                         }
                     });
                 }
@@ -33,11 +34,13 @@ export class Poll extends React.Component<{}, {}> {
     }
 
     onSubmit(e){
+        e.preventDefault();
+        alert("Submitted successfully");
     }
 
     render() {
        return (  
-        
+
             <div>
                <div className="col-md-2"></div>
 
@@ -49,7 +52,11 @@ export class Poll extends React.Component<{}, {}> {
 
                                 <div id = "questions">
                                 </div>
-                                <input type="submit" value="Submit" className="btn btn-success" onClick={this.onSubmit.bind(this)} />
+                                <div>
+                                    <textarea placeholder="whatever you want to say" name="reply_name" id="textbox_1" rows="3" className="form-control input-sm"></textarea>
+                                </div>
+                                <br/>
+                                <input type="button" value="Submit" className="btn btn-success" onClick={this.onSubmit.bind(this)} />
                             </form>  
                         </div>
                     </div>  

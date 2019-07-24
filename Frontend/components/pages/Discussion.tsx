@@ -42,6 +42,11 @@ export class Discussion extends React.Component<{}, {}> {
             .catch(err => messageStore.onShowError('Sorry we couldn\'t get your cars list. Something went wrong.'));
     }
 
+    onSubmitReply(e){
+        e.preventDefault();
+        alert("submitted successfully!");
+    }
+
     render() {
         return (
             <div title="Discussion">
@@ -58,11 +63,8 @@ export class Discussion extends React.Component<{}, {}> {
                         <div className="panel panel-default">
                             <div className="panel-body">
                                 <div className="row">
-                                    <div className="col-md-2 col-sm-2 text-center">
-                                        <i className="fal fa-child"></i>
-                                    </div>
-                                    <div className="col-md-8 col-sm-8 grey-text">
-                                        <span id = "mainThread_0"><i className="fa fa-times-circle-o red-text"></i> sss soon!</span>
+                                    <div className="col-md-12 col-sm-12 grey-text">
+                                        <span id = "mainThread_0"><i className="fa fa-times-circle-o red-text"></i> This is test data</span>
                                     </div>
                                 </div>
                             </div>
@@ -73,7 +75,7 @@ export class Discussion extends React.Component<{}, {}> {
                                 <i ></i>
                             </div>
                             <div className="col-md-10 col-sm-10 grey-text">
-                                <span id = "listgroup_0_reply_0"><i className="fa fa-times-circle-o red-text"></i> sss soon!</span><br/>
+                                <span id = "listgroup_0_reply_0"><i className="fa fa-times-circle-o red-text"></i> This is test data</span><br/>
                             </div>
                         </div>
 
@@ -82,7 +84,7 @@ export class Discussion extends React.Component<{}, {}> {
                                 <i ></i>
                             </div>
                             <div className="col-md-10 col-sm-10 grey-text">
-                                <span id = "listgroup_0_reply_1"><i className="fa fa-times-circle-o red-text"></i> sss soon!</span><br/>
+                                <span id = "listgroup_0_reply_1"><i className="fa fa-times-circle-o red-text"></i> This is test data</span><br/>
                             </div>
                         </div>
 
@@ -91,7 +93,7 @@ export class Discussion extends React.Component<{}, {}> {
                                 <i ></i>
                             </div>
                             <div className="col-md-10 col-sm-10 grey-text">
-                                <span id = "listgroup_0_reply_2"><i className="fa fa-times-circle-o red-text"></i> sss soon!</span><br/>
+                                <span id = "listgroup_0_reply_2"><i className="fa fa-times-circle-o red-text"></i> This is test data</span><br/>
                             </div>
                         </div>
 
@@ -100,7 +102,7 @@ export class Discussion extends React.Component<{}, {}> {
                                 <i ></i>
                             </div>
                             <div className="col-md-10 col-sm-10 grey-text">
-                                <span id = "listgroup_0_reply_3"><i className="fa fa-times-circle-o red-text"></i> sss soon!</span><br/>
+                                <span id = "listgroup_0_reply_3"><i className="fa fa-times-circle-o red-text"></i> This is test data</span><br/>
                             </div>
                         </div>
 
@@ -111,9 +113,9 @@ export class Discussion extends React.Component<{}, {}> {
                             <div className="col-md-10 col-sm-10 grey-text">
                                 <div>
                                     <textarea placeholder="reply" name="reply_1_name" id="listgroup_0_reply_1" rows="3" className="form-control input-sm"></textarea>
-                                </div>
+                                </div><br/>
                                 <div className="pull-right">
-                                    <input type="submit" id="submit_0" onClick={this.onSubmitReply.bind(this)}  />
+                                    <input type="button" value="Submit" className="btn btn-success" onClick={this.onSubmitReply.bind(this)}  />
                                 </div>  
                             </div>
                         </div>  
@@ -123,11 +125,8 @@ export class Discussion extends React.Component<{}, {}> {
                         <div className="panel panel-default">
                             <div className="panel-body">
                                 <div className="row">
-                                    <div className="col-md-2 col-sm-2 text-center">
-                                        <i className="fal fa-child"></i>
-                                    </div>
-                                    <div className="col-md-8 col-sm-8 grey-text">
-                                        <span id = "mainThread_1"><i className="fa fa-times-circle-o red-text"></i> sss soon!</span>
+                                    <div className="col-md-12 col-sm-12 grey-text">
+                                        <span id = "mainThread_1"><i className="fa fa-times-circle-o red-text"></i> This is test data</span>
                                     </div>
                                 </div>
                             </div>
@@ -138,7 +137,7 @@ export class Discussion extends React.Component<{}, {}> {
                                 <i ></i>
                             </div>
                             <div className="col-md-10 col-sm-10 grey-text">
-                                <span id = "listgroup_1_reply_0"><i className="fa fa-times-circle-o red-text"></i> sss soon!</span><br/>
+                                <span id = "listgroup_1_reply_0"><i className="fa fa-times-circle-o red-text"></i> This is test data</span><br/>
                             </div>
                         </div>
 
@@ -147,7 +146,7 @@ export class Discussion extends React.Component<{}, {}> {
                                 <i ></i>
                             </div>
                             <div className="col-md-10 col-sm-10 grey-text">
-                                <span id = "listgroup_1_reply_1"><i className="fa fa-times-circle-o red-text"></i> sss soon!</span><br/>
+                                <span id = "listgroup_1_reply_1"><i className="fa fa-times-circle-o red-text"></i> This is test data</span><br/>
                             </div>
                         </div>
 
@@ -156,7 +155,7 @@ export class Discussion extends React.Component<{}, {}> {
                                 <i ></i>
                             </div>
                             <div className="col-md-10 col-sm-10 grey-text">
-                                <span id = "listgroup_1_reply_2"><i className="fa fa-times-circle-o red-text"></i> sss soon!</span><br/>
+                                <span id = "listgroup_1_reply_2"><i className="fa fa-times-circle-o red-text"></i> This is test data</span><br/>
                             </div>
                         </div>
 
@@ -165,7 +164,7 @@ export class Discussion extends React.Component<{}, {}> {
                                 <i ></i>
                             </div>
                             <div className="col-md-10 col-sm-10 grey-text">
-                                <span id = "listgroup_1_reply_3"><i className="fa fa-times-circle-o red-text"></i> sss soon!</span><br/>
+                                <span id = "listgroup_1_reply_3"><i className="fa fa-times-circle-o red-text"></i> This is test data</span><br/>
                             </div>
                         </div>
 
@@ -176,9 +175,9 @@ export class Discussion extends React.Component<{}, {}> {
                             <div className="col-md-10 col-sm-10 grey-text">
                                 <div>
                                     <textarea placeholder="reply" name="reply_1_name" id="reply_1" rows="3" className="form-control input-sm"></textarea>
-                                </div>
+                                </div><br/>
                                 <div className="pull-right">
-                                    <input type="submit" id="submit_1" onClick={this.onSubmitReply.bind(this)}  />
+                                    <input type="button" value="Submit" className="btn btn-success" onClick={this.onSubmitReply.bind(this)}  />
                                 </div>  
                             </div>
                         </div>  
@@ -189,11 +188,8 @@ export class Discussion extends React.Component<{}, {}> {
                         <div className="panel panel-default">
                             <div className="panel-body">
                                 <div className="row">
-                                    <div className="col-md-2 col-sm-2 text-center">
-                                        <i className="fal fa-child"></i>
-                                    </div>
-                                    <div className="col-md-8 col-sm-8 grey-text">
-                                        <span id = "mainThread_2"><i className="fa fa-times-circle-o red-text"></i> sss soon!</span>
+                                    <div className="col-md-12 col-sm-12 grey-text">
+                                        <span id = "mainThread_2"><i className="fa fa-times-circle-o red-text"></i> This is test data</span>
                                     </div>
                                 </div>
                             </div>
@@ -204,7 +200,7 @@ export class Discussion extends React.Component<{}, {}> {
                                 <i ></i>
                             </div>
                             <div className="col-md-10 col-sm-10 grey-text">
-                                <span id = "listgroup_2_reply_0"><i className="fa fa-times-circle-o red-text"></i> sss soon!</span><br/>
+                                <span id = "listgroup_2_reply_0"><i className="fa fa-times-circle-o red-text"></i> This is test data</span><br/>
                             </div>
                         </div>
 
@@ -213,7 +209,7 @@ export class Discussion extends React.Component<{}, {}> {
                                 <i ></i>
                             </div>
                             <div className="col-md-10 col-sm-10 grey-text">
-                                <span id = "listgroup_2_reply_1"><i className="fa fa-times-circle-o red-text"></i> sss soon!</span><br/>
+                                <span id = "listgroup_2_reply_1"><i className="fa fa-times-circle-o red-text"></i> This is test data</span><br/>
                             </div>
                         </div>
 
@@ -222,7 +218,7 @@ export class Discussion extends React.Component<{}, {}> {
                                 <i ></i>
                             </div>
                             <div className="col-md-10 col-sm-10 grey-text">
-                                <span id = "listgroup_2_reply_2"><i className="fa fa-times-circle-o red-text"></i> sss soon!</span><br/>
+                                <span id = "listgroup_2_reply_2"><i className="fa fa-times-circle-o red-text"></i> This is test data</span><br/>
                             </div>
                         </div>
 
@@ -231,7 +227,7 @@ export class Discussion extends React.Component<{}, {}> {
                                 <i ></i>
                             </div>
                             <div className="col-md-10 col-sm-10 grey-text">
-                                <span id = "listgroup_2_reply_3"><i className="fa fa-times-circle-o red-text"></i> sss soon!</span><br/>
+                                <span id = "listgroup_2_reply_3"><i className="fa fa-times-circle-o red-text"></i> This is test data</span><br/>
                             </div>
                         </div>
 
@@ -242,9 +238,9 @@ export class Discussion extends React.Component<{}, {}> {
                             <div className="col-md-10 col-sm-10 grey-text">
                                 <div>
                                     <textarea placeholder="reply" name="reply_name" id="submit_2" rows="3" className="form-control input-sm"></textarea>
-                                </div>
+                                </div><br/>
                                 <div className="pull-right">
-                                    <input type="submit" id="submit_3" onClick={this.onSubmitReply.bind(this)}  />
+                                    <input type="button" value="Submit" className="btn btn-success" onClick={this.onSubmitReply.bind(this)}  />
                                 </div>  
                             </div>
                         </div>  
@@ -255,11 +251,8 @@ export class Discussion extends React.Component<{}, {}> {
                         <div className="panel panel-default">
                             <div className="panel-body">
                                 <div className="row">
-                                    <div className="col-md-2 col-sm-2 text-center">
-                                        <i className="fal fa-child"></i>
-                                    </div>
-                                    <div className="col-md-8 col-sm-8 grey-text">
-                                        <span id = "mainThread_3"><i className="fa fa-times-circle-o red-text"></i> sss soon!</span>
+                                    <div className="col-md-12 col-sm-12 grey-text">
+                                        <span id = "mainThread_3"><i className="fa fa-times-circle-o red-text"></i> This is test data</span>
                                     </div>
                                 </div>
                             </div>
@@ -269,7 +262,7 @@ export class Discussion extends React.Component<{}, {}> {
                                 <i ></i>
                             </div>
                             <div className="col-md-10 col-sm-10 grey-text">
-                                <span id = "listgroup_3_reply_0"><i className="fa fa-times-circle-o red-text"></i> sss soon!</span><br/>
+                                <span id = "listgroup_3_reply_0"><i className="fa fa-times-circle-o red-text"></i> This is test data</span><br/>
                             </div>
                         </div>
 
@@ -278,7 +271,7 @@ export class Discussion extends React.Component<{}, {}> {
                                 <i ></i>
                             </div>
                             <div className="col-md-10 col-sm-10 grey-text">
-                                <span id = "listgroup_3_reply_1"><i className="fa fa-times-circle-o red-text"></i> sss soon!</span><br/>
+                                <span id = "listgroup_3_reply_1"><i className="fa fa-times-circle-o red-text"></i> This is test data</span><br/>
                             </div>
                         </div>
 
@@ -287,7 +280,7 @@ export class Discussion extends React.Component<{}, {}> {
                                 <i ></i>
                             </div>
                             <div className="col-md-10 col-sm-10 grey-text">
-                                <span id = "listgroup_3_reply_2"><i className="fa fa-times-circle-o red-text"></i> sss soon!</span><br/>
+                                <span id = "listgroup_3_reply_2"><i className="fa fa-times-circle-o red-text"></i> This is test data</span><br/>
                             </div>
                         </div>
 
@@ -296,7 +289,7 @@ export class Discussion extends React.Component<{}, {}> {
                                 <i ></i>
                             </div>
                             <div className="col-md-10 col-sm-10 grey-text">
-                                <span id = "listgroup_3_reply_3"><i className="fa fa-times-circle-o red-text"></i> sss soon!</span><br/>
+                                <span id = "listgroup_3_reply_3"><i className="fa fa-times-circle-o red-text"></i> This is test data</span><br/>
                             </div>
                         </div>
 
@@ -307,13 +300,12 @@ export class Discussion extends React.Component<{}, {}> {
                             <div className="col-md-10 col-sm-10 grey-text">
                                 <div>
                                     <textarea placeholder="reply" name="reply_name" id="submit_2" rows="3" className="form-control input-sm"></textarea>
-                                </div>
+                                </div><br/>
                                 <div className="pull-right">
-                                    <input type="submit" id="submit_3" onClick={this.onSubmitReply.bind(this)}  />
+                                    <input type="button" value="Submit" className="btn btn-success" onClick={this.onSubmitReply.bind(this)}  />
                                 </div>  
                             </div>
                         </div>  
-                        
 
                     </div>
                 </div>
