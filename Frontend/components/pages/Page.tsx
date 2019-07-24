@@ -54,9 +54,7 @@ export class Page extends React.Component<{}, {}> {
        return (
             <div>
                 <div>
-                    <NavBar />
-                </div>             
-                <div>
+                    <NavBar>
                     <div>
                         <select id="country" name ="country_name" onChange={this.onSelectCountry.bind(this)}>
                               <option>Choose Country</option>
@@ -67,6 +65,9 @@ export class Page extends React.Component<{}, {}> {
                         <select id="office" name ="office_name">
                         </select>
                     </div>
+                    </NavBar>
+                </div>             
+                <div>
                     <div>
                         <Poll />
                     </div> 

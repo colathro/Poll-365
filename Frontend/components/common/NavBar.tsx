@@ -1,8 +1,28 @@
 import * as React from 'react';
 
 import {Link} from 'react-router'
+import {quickFinderStore, OfficeModel, EventData, EventType} from '../../stores/QuickFinderStore'
+import {Comm} from '../../stores/CommunicationStore'
 
 export class NavBar extends React.Component<{}, {}> {
+    onSelectCountry(e){
+        window.location.href = '#/';
+        
+        let officeDropdown = $('#office');
+        var s = e.target.value
+        console.log(s);
+        Comm.get({url: `office/country/${s}`, reqMethod: 'get'})
+           .then(res => {
+            if (res.ok) {  
+                    res.json().then(entry => {
+                        for (var i = 0; i < entry.length; i++){
+                            officeDropdown.append($('<option></option>').attr('value', entry[i].id).text(entry[i].name));
+                        }
+                    });
+                }
+            });
+    }
+
     render() {
         return <nav className="navbar navbar-default navbar-static-top">
             <div className="container-fluid">
@@ -24,7 +44,18 @@ export class NavBar extends React.Component<{}, {}> {
                     </ul>
                     <div id="nav-right">
                         <ul className="nav navbar-nav navbar-right">
-                            <li><Link to="/login">Country</Link></li>
+                            <div className="nav-selector">
+                                Country: 
+                            <select id="country" name ="country_name" onChange={this.onSelectCountry.bind(this)}>
+                                <option>Choose Country</option>
+                            </select>
+                            </div>
+
+                            <div className="nav-selector">
+                                Area: 
+                                <select id="office" name ="office_name">
+                                </select>
+                            </div>
                         </ul>
                     </div>
                 </div>

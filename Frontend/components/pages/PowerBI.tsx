@@ -7,10 +7,10 @@ import {NavBar} from '../common/NavBar';
 export class PowerBI extends React.Component<{}, {}> {
     render() {
         return (
-            <div>
-                <NavBar />
-            </div>
             <div title="Error">
+                <div>
+                    <NavBar />
+                </div>
                 <div className="text-center">
                 <br/><br/>
                     <p><i className="fa fa-times-circle-o red-text"></i> Coming soon!</p>
