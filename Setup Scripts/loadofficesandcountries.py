@@ -5,8 +5,12 @@ def main():
     with open('Countries.json', 'r') as target:
         datastore = json.load(target)
         x = datastore['items'][0]
-        for i in datastore["items"]:
-            print(GetBuilding(i['Description']))
+        GetCountry(x)
+        #for i in datastore["items"]:
+        #    print(GetBuilding(i['Description']))
+
+def GetCountry(desc):
+    print(desc)
 
 def GetBuilding(building):
     building = building.split('Building:')
