@@ -243,3 +243,8 @@ span .error{
     display: inline;
     margin-left: 15px;
 }
+
+.PowerBi {
+    height: 100%;
+    width: 100%;
+}
