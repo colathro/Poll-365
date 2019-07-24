@@ -33,7 +33,7 @@ export class Discussion extends React.Component<{}, {}> {
                 if (res.ok) {
                     res.json().then(entry => {
                         for (var i = 0; i < entry.length; i++){
-                            $('#mainThread_'+i).text(entry[i].text);
+                            $('#mainThread_'+i).text("" + entry[i].text);
                             this.GetReply(entry[i].id);
                         }
                     });
@@ -64,7 +64,7 @@ export class Discussion extends React.Component<{}, {}> {
                             <div className="panel-body">
                                 <div className="row">
                                     <div className="col-md-12 col-sm-12 grey-text">
-                                        <span id = "mainThread_0"><i className="fa fa-times-circle-o red-text"></i> This is test data</span>
+                                        <span id = "mainThread_0"></span>
                                     </div>
                                 </div>
                             </div>
@@ -75,7 +75,7 @@ export class Discussion extends React.Component<{}, {}> {
                                 <i ></i>
                             </div>
                             <div className="col-md-10 col-sm-10 grey-text">
-                                <span id = "listgroup_0_reply_0"><i className="fa fa-times-circle-o red-text"></i> This is test data</span><br/>
+                                <span id = "listgroup_0_reply_0"></span><br/>
                             </div>
                         </div>
 
@@ -84,7 +84,7 @@ export class Discussion extends React.Component<{}, {}> {
                                 <i ></i>
                             </div>
                             <div className="col-md-10 col-sm-10 grey-text">
-                                <span id = "listgroup_0_reply_1"><i className="fa fa-times-circle-o red-text"></i> This is test data</span><br/>
+                                <span id = "listgroup_0_reply_1"></span><br/>
                             </div>
                         </div>
 
@@ -93,7 +93,7 @@ export class Discussion extends React.Component<{}, {}> {
                                 <i ></i>
                             </div>
                             <div className="col-md-10 col-sm-10 grey-text">
-                                <span id = "listgroup_0_reply_2"><i className="fa fa-times-circle-o red-text"></i> This is test data</span><br/>
+                                <span id = "listgroup_0_reply_2"></span><br/>
                             </div>
                         </div>
 
@@ -102,7 +102,7 @@ export class Discussion extends React.Component<{}, {}> {
                                 <i ></i>
                             </div>
                             <div className="col-md-10 col-sm-10 grey-text">
-                                <span id = "listgroup_0_reply_3"><i className="fa fa-times-circle-o red-text"></i> This is test data</span><br/>
+                                <span id = "listgroup_0_reply_3"></span><br/>
                             </div>
                         </div>
 
@@ -126,7 +126,7 @@ export class Discussion extends React.Component<{}, {}> {
                             <div className="panel-body">
                                 <div className="row">
                                     <div className="col-md-12 col-sm-12 grey-text">
-                                        <span id = "mainThread_1"><i className="fa fa-times-circle-o red-text"></i> This is test data</span>
+                                        <span id = "mainThread_1"> </span>
                                     </div>
                                 </div>
                             </div>
@@ -137,7 +137,7 @@ export class Discussion extends React.Component<{}, {}> {
                                 <i ></i>
                             </div>
                             <div className="col-md-10 col-sm-10 grey-text">
-                                <span id = "listgroup_1_reply_0"><i className="fa fa-times-circle-o red-text"></i> This is test data</span><br/>
+                                <span id = "listgroup_1_reply_0"> </span><br/>
                             </div>
                         </div>
 
@@ -146,7 +146,7 @@ export class Discussion extends React.Component<{}, {}> {
                                 <i ></i>
                             </div>
                             <div className="col-md-10 col-sm-10 grey-text">
-                                <span id = "listgroup_1_reply_1"><i className="fa fa-times-circle-o red-text"></i> This is test data</span><br/>
+                                <span id = "listgroup_1_reply_1"></span><br/>
                             </div>
                         </div>
 
@@ -155,7 +155,7 @@ export class Discussion extends React.Component<{}, {}> {
                                 <i ></i>
                             </div>
                             <div className="col-md-10 col-sm-10 grey-text">
-                                <span id = "listgroup_1_reply_2"><i className="fa fa-times-circle-o red-text"></i> This is test data</span><br/>
+                                <span id = "listgroup_1_reply_2"></span><br/>
                             </div>
                         </div>
 
@@ -164,7 +164,7 @@ export class Discussion extends React.Component<{}, {}> {
                                 <i ></i>
                             </div>
                             <div className="col-md-10 col-sm-10 grey-text">
-                                <span id = "listgroup_1_reply_3"><i className="fa fa-times-circle-o red-text"></i> This is test data</span><br/>
+                                <span id = "listgroup_1_reply_3"> </span><br/>
                             </div>
                         </div>
 
@@ -189,7 +189,7 @@ export class Discussion extends React.Component<{}, {}> {
                             <div className="panel-body">
                                 <div className="row">
                                     <div className="col-md-12 col-sm-12 grey-text">
-                                        <span id = "mainThread_2"><i className="fa fa-times-circle-o red-text"></i> This is test data</span>
+                                        <span id = "mainThread_2"></span>
                                     </div>
                                 </div>
                             </div>
@@ -200,7 +200,7 @@ export class Discussion extends React.Component<{}, {}> {
                                 <i ></i>
                             </div>
                             <div className="col-md-10 col-sm-10 grey-text">
-                                <span id = "listgroup_2_reply_0"><i className="fa fa-times-circle-o red-text"></i> This is test data</span><br/>
+                                <span id = "listgroup_2_reply_0"></span><br/>
                             </div>
                         </div>
 
@@ -209,7 +209,7 @@ export class Discussion extends React.Component<{}, {}> {
                                 <i ></i>
                             </div>
                             <div className="col-md-10 col-sm-10 grey-text">
-                                <span id = "listgroup_2_reply_1"><i className="fa fa-times-circle-o red-text"></i> This is test data</span><br/>
+                                <span id = "listgroup_2_reply_1"></span><br/>
                             </div>
                         </div>
 
@@ -218,7 +218,7 @@ export class Discussion extends React.Component<{}, {}> {
                                 <i ></i>
                             </div>
                             <div className="col-md-10 col-sm-10 grey-text">
-                                <span id = "listgroup_2_reply_2"><i className="fa fa-times-circle-o red-text"></i> This is test data</span><br/>
+                                <span id = "listgroup_2_reply_2"></span><br/>
                             </div>
                         </div>
 
@@ -227,7 +227,7 @@ export class Discussion extends React.Component<{}, {}> {
                                 <i ></i>
                             </div>
                             <div className="col-md-10 col-sm-10 grey-text">
-                                <span id = "listgroup_2_reply_3"><i className="fa fa-times-circle-o red-text"></i> This is test data</span><br/>
+                                <span id = "listgroup_2_reply_3"></span><br/>
                             </div>
                         </div>
 
@@ -252,7 +252,7 @@ export class Discussion extends React.Component<{}, {}> {
                             <div className="panel-body">
                                 <div className="row">
                                     <div className="col-md-12 col-sm-12 grey-text">
-                                        <span id = "mainThread_3"><i className="fa fa-times-circle-o red-text"></i> This is test data</span>
+                                        <span id = "mainThread_3"></span>
                                     </div>
                                 </div>
                             </div>
@@ -262,7 +262,7 @@ export class Discussion extends React.Component<{}, {}> {
                                 <i ></i>
                             </div>
                             <div className="col-md-10 col-sm-10 grey-text">
-                                <span id = "listgroup_3_reply_0"><i className="fa fa-times-circle-o red-text"></i> This is test data</span><br/>
+                                <span id = "listgroup_3_reply_0"></span><br/>
                             </div>
                         </div>
 
@@ -271,7 +271,7 @@ export class Discussion extends React.Component<{}, {}> {
                                 <i ></i>
                             </div>
                             <div className="col-md-10 col-sm-10 grey-text">
-                                <span id = "listgroup_3_reply_1"><i className="fa fa-times-circle-o red-text"></i> This is test data</span><br/>
+                                <span id = "listgroup_3_reply_1"></span><br/>
                             </div>
                         </div>
 
@@ -280,7 +280,7 @@ export class Discussion extends React.Component<{}, {}> {
                                 <i ></i>
                             </div>
                             <div className="col-md-10 col-sm-10 grey-text">
-                                <span id = "listgroup_3_reply_2"><i className="fa fa-times-circle-o red-text"></i> This is test data</span><br/>
+                                <span id = "listgroup_3_reply_2"></span><br/>
                             </div>
                         </div>
 
@@ -289,7 +289,7 @@ export class Discussion extends React.Component<{}, {}> {
                                 <i ></i>
                             </div>
                             <div className="col-md-10 col-sm-10 grey-text">
-                                <span id = "listgroup_3_reply_3"><i className="fa fa-times-circle-o red-text"></i> This is test data</span><br/>
+                                <span id = "listgroup_3_reply_3"></span><br/>
                             </div>
                         </div>
 
