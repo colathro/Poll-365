@@ -59,9 +59,12 @@ namespace Backend.Controllers
                 _context.SaveChanges();
 
                 // Discussion insertion
-                submission.Discussion.SubmissionId = submission.Submission.Id;
-                submission.Discussion.CreatedOn = DateTime.UtcNow;
-                _context.Discussions.Add(submission.Discussion);
+                if (submission.Discussion != null){
+                    submission.Discussion.SubmissionId = submission.Submission.Id;
+                    submission.Discussion.CreatedOn = DateTime.UtcNow;
+                    _context.Discussions.Add(submission.Discussion);
+                }
+
 
                 _context.SaveChanges();
             }
