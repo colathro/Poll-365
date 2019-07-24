@@ -13,7 +13,7 @@ export class PowerBI extends React.Component<{}, {}> {
                 </div>
                 <div className="text-center">
                 <br/><br/>
-                    <p><i className="fa fa-times-circle-o red-text"></i> Coming soon!</p>
+                <iframe className='PowerBI' src="https://msit.powerbi.com/view?r=eyJrIjoiZWQ5NGFhZGItMGM2OS00MjZkLTk1NWUtNzIzZjYyNzM2MDYwIiwidCI6IjcyZjk4OGJmLTg2ZjEtNDFhZi05MWFiLTJkN2NkMDExZGI0NyIsImMiOjV9" frameborder="0" allowFullScreen="true"></iframe>
    
                     
                 </div>

@@ -40,10 +40,5 @@ namespace Backend.Controllers
             }
             return _context.Discussions.FromSql(sql).ToList();
         }
-
-        [HttpPost]
-        public void Post([FromBody] Discussion Discussion)
-        {
-        }
     }
 }
