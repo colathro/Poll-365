@@ -46,17 +46,18 @@ namespace Backend.Controllers
                 _context.Submissions.Add(submission.Submission);
                 _context.SaveChanges();
 
+                if (submission.Answers != null){
+                    // Answer insertion
+                    ParseAnswerList(submission.Answers);
 
-                // Answer insertion
-                ParseAnswerList(submission.Answers);
-
-                foreach (var item in submission.Answers)
-                {
-                    item.CreatedOn = DateTime.UtcNow;
-                    item.SubmissionId = submission.Submission.Id;
-                    _context.Answers.Add(item);
+                    foreach (var item in submission.Answers)
+                    {
+                        item.CreatedOn = DateTime.UtcNow;
+                        item.SubmissionId = submission.Submission.Id;
+                        _context.Answers.Add(item);
+                    }
+                    _context.SaveChanges();
                 }
-                _context.SaveChanges();
 
                 // Discussion insertion
                 if (submission.Discussion != null){
