@@ -14,8 +14,9 @@ export class App extends React.Component<{}, {}>{
     render() {
         return (
             <Router history={hashHistory}>
+            	<Route path="/" component={Welcome}/>
                 <Route path="/poll" component={Welcome}/>
-                <Route path="/discussion" component={Discussion}/>
+                <Route path="/chat" component={Discussion}/>
                 <Route path="/powerbi" component={PowerBI}/>
             </Router>
         );

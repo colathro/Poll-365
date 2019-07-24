@@ -5,12 +5,7 @@ import {NavBar} from '../common/NavBar';
 import {Comm} from '../../stores/CommunicationStore'
 
 export class Discussion extends React.Component<{}, {}> {   
-
-    onValChanged(val: EventData) {    
-    }
-    
     componentDidMount() {
-        window.location.href = '#/';
         let countryDropdown = $("#country");
         Comm.get({url: 'discussion?PageNumber=1&PageSize=5', reqMethod: 'get'})
            .then(res => {
@@ -22,18 +17,19 @@ export class Discussion extends React.Component<{}, {}> {
             });
     }
 
-   componentWillUnmount() {
-    }
-        
     render() {
-       return (
-            <div>
+        return (
+            <div title="Error">
                 <div>
                     <NavBar />
                 </div>
-                <p> discuession page </p>
-
-            </div >
+                <div className="text-center">
+                <br/><br/>
+                    <p><i className="fa fa-times-circle-o red-text"></i> sss soon!</p>
+   
+                    
+                </div>
+            </div>
         );
     }
 }
