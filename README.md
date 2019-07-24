@@ -37,7 +37,7 @@ Sample Json Body:
 {
 	"Answers": [ {"Value" : 5, "QuestionId" : 1},
 		{"Value" : 3, "QuestionId" : 2}
-		],ß
+		],
 	"Discussion": {"Text": "Test Test Test Test"},
 	"Submission": {"OfficeId": 1}
 }
