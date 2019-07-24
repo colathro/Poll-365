@@ -44,7 +44,7 @@ export class Discussion extends React.Component<{}, {}> {
 
     render() {
         return (
-            <div title="Error">
+            <div title="Discussion">
                 <div>
                     <NavBar />
                 </div>

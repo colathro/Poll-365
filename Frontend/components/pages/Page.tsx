@@ -2,7 +2,6 @@ import * as React from 'react';
 
 import {quickFinderStore, OfficeModel, EventData, EventType} from '../../stores/QuickFinderStore'
 import {NavBar} from '../common/NavBar';
-import {Footer} from '../common/Footer';
 import {Poll} from './Poll';
 import {Comm} from '../../stores/CommunicationStore'
 
@@ -61,9 +60,6 @@ export class Page extends React.Component<{}, {}> {
                     <div>
                         <Poll />
                     </div> 
-                </div>
-                <div>
-                    <Footer/>
                 </div>
             </div >
         );

@@ -6,12 +6,6 @@ import {Comm} from '../../stores/CommunicationStore'
 
 export class Footer extends React.Component<{}, {}> {
         componentDidMount() {
-            var docHeight = $(window).height();
-            var footerHeight = $('#footerStyle').height();
-            var footerTop = $('#footerStyle').position().top + footerHeight;        
-            if (footerTop < docHeight) {
-                $('#footerStyle').css('margin-top', (docHeight - footerTop) + 'px');
-            }
         }
         
         render() {

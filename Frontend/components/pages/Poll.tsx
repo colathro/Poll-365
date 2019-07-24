@@ -5,9 +5,6 @@ import {Link} from 'react-router'
 import {quickFinderStore, OfficeModel, EventData, EventType} from '../../stores/QuickFinderStore'
 import {Comm} from '../../stores/CommunicationStore'
 
-export interface PageProps {
-    title: string
-}
 
 export class Poll extends React.Component<{}, {}> {   
     onValChanged(val: EventData) {     
@@ -39,12 +36,26 @@ export class Poll extends React.Component<{}, {}> {
     }
 
     render() {
-       return (          
-            <form>
-                    <div id = "questions">
-                    </div>
-                    <input type="submit" value="Submit" onClick={this.onSubmit.bind(this)} />
-            </form>                    
+       return (  
+            <div>
+               <div className="col-md-2"></div>
+
+                <div className="col-md-8 col-sm-12">        
+                    <div className="panel panel-default">
+                        <div className="panel-heading">Poll form</div>
+                        <div className="panel-body">            
+                            <form method="post" className="form-horizontal" id="form-registration">  
+
+                                <div id = "questions">
+                                </div>
+                                <input type="submit" value="Submit" className="btn btn-success" onClick={this.onSubmit.bind(this)} />
+                            </form>  
+                        </div>
+                    </div>  
+                </div> 
+
+                <div className="col-md-2"></div>    
+            </div>           
         );
     }
 }
