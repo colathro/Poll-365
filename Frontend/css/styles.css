@@ -224,3 +224,12 @@ span .error{
     position:relative;
     height: 20px;
 }
+
+.nav-selector {
+    display: inline;
+    margin-left: 10px;
+}
+
+#nav-right {
+    margin-top: 15px;
+}
