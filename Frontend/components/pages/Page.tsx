@@ -16,8 +16,6 @@ export class Page extends React.Component<{}, {}> {
     }
 
     onSelectCountry(e){
-        window.location.href = '#/';
-        
         let officeDropdown = $('#office');
         var s = e.target.value
         console.log(s);
@@ -35,7 +33,6 @@ export class Page extends React.Component<{}, {}> {
     
     componentDidMount() {
         this._subscription = quickFinderStore.subscribe(this, this.onValChanged);
-        window.location.href = '#/';
         let countryDropdown = $("#country");
         Comm.get({url: 'country', reqMethod: 'get'})
            .then(res => {

@@ -8,8 +8,6 @@ export interface PageProps {
 }
 
 export class Poll extends React.Component<{}, {}> {   
-    _subscription = null;
-
     onValChanged(val: EventData) {     
     }
 
@@ -35,7 +33,6 @@ export class Poll extends React.Component<{}, {}> {
     }
 
    componentWillUnmount() {
-        this._subscription.unsubscribe(this, this.onValChanged);
     }
         
     render() {

@@ -18,8 +18,9 @@ export class NavBar extends React.Component<{}, {}> {
                 </div>
                 <div className="collapse navbar-collapse" id="main-navbar">
                     <ul className="nav navbar-nav">
-                        <li><Link to="/tours">Poll</Link></li>
-                        <li><Link to="/groups">Disucession</Link></li>
+                        <li><a href="#/poll">Poll</a></li>
+                        <li><a href="#/discussion">Discussion</a></li>
+                        <li><a href="#/powerbi">Power BI</a></li>
                     </ul>
                     <div id="nav-right">
                         <ul className="nav navbar-nav navbar-right">

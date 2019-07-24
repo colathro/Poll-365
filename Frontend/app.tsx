@@ -6,14 +6,17 @@ import * as Bootstrap from 'bootstrap';
 import { Router, Route, Link, IndexRoute, hashHistory, browserHistory } from 'react-router';
 
 import { Welcome } from './components/pages/Welcome';
-
+import { Discussion } from './components/pages/Discussion';
+import { PowerBI } from './components/pages/PowerBI';
 
 export class App extends React.Component<{}, {}>{
 
     render() {
         return (
             <Router history={hashHistory}>
-                <Route path="/" component={Welcome}/>
+                <Route path="/poll" component={Welcome}/>
+                <Route path="/discussion" component={Discussion}/>
+                <Route path="/powerbi" component={PowerBI}/>
             </Router>
         );
     }
