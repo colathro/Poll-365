@@ -55,24 +55,6 @@
     },
     "nanoflux/NanoFlux.d.ts": {
       "commit": "73f7bb99692823f1811817f9753a02b57af53052"
-    },
-    "moment/moment-node.d.ts": {
-      "commit": "edb64e4a35896510ce02b93c0bca5ec3878db738"
-    },
-    "moment/moment.d.ts": {
-      "commit": "edb64e4a35896510ce02b93c0bca5ec3878db738"
-    },
-    "pikaday/pikaday.d.ts": {
-      "commit": "edb64e4a35896510ce02b93c0bca5ec3878db738"
-    },
-    "whatwg-fetch/whatwg-fetch.d.ts": {
-      "commit": "edb64e4a35896510ce02b93c0bca5ec3878db738"
-    },
-    "es6-promise/es6-promise.d.ts": {
-      "commit": "edb64e4a35896510ce02b93c0bca5ec3878db738"
-    },
-    "switchery/switchery.d.ts": {
-      "commit": "fdb64e4a35896510ce02b93c0bca5ec3878db738"
     }
   }
 }

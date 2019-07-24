@@ -1,4 +1,3 @@
-
 declare class NanoFlux {
         createStore(name: string, store: any);
         createActions(name: string, dispatcher: any, store: any);

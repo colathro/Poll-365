@@ -1,5 +1,4 @@
 var webpack = require('webpack');
-var ProgressBarPlugin = require('progress-bar-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -13,23 +12,8 @@ module.exports = {
         extensions: ['', '.webpack.js', '.web.js', '.js', '.ts', '.tsx', '.css', '.less', '.ttf']
     },
     plugins: [
-    //  new webpack.optimize.UglifyJsPlugin(),
-        new webpack.DefinePlugin({
-         	'process.env':{
-         		'NODE_ENV': JSON.stringify('production')
-         	 }
-         }),
-    		new webpack.optimize.UglifyJsPlugin({
-    			compress:{
-    				warnings: true
-    			}
-    		}),
-
-        new ProgressBarPlugin(),
-        new webpack.ProvidePlugin({
-            'fetch': 'imports?this=>global!exports?global.fetch!whatwg-fetch'
-        })   
-    ],
+       new webpack.optimize.UglifyJsPlugin()
+   ],
     module: {
         loaders: [
             { test: /\.ts$/, loader: 'ts' },
