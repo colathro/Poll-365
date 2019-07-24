@@ -19,7 +19,7 @@ export class NavBar extends React.Component<{}, {}> {
                 <div className="collapse navbar-collapse" id="main-navbar">
                     <ul className="nav navbar-nav">
                         <li><Link to="/tours">Poll</Link></li>
-                        <li><Link to="/groups">Disucession</Link></li>
+                        <li><Link to="/groups">Discussion</Link></li>
                     </ul>
                     <div id="nav-right">
                         <ul className="nav navbar-nav navbar-right">
